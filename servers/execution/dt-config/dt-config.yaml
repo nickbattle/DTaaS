@@ -1,0 +1,31 @@
+
+version: 0.1
+
+assets:
+  config:
+    location: incubator.conf
+    
+compute:
+  host: docker
+  software-id: ubuntu22:latest
+
+dt_services:
+  internal:
+    rabbitmq:
+      host: rabbitmq.foo.com
+      port: 5473
+
+      credentials:
+        username: incubator
+        password: xxxxx
+
+      topic: incubator
+
+external:
+  influx:
+    ports: [8086]
+    hostnames: [influxdb.cloud-provider.com]
+
+physical_twin:
+  config:
+    location: pt.conf
